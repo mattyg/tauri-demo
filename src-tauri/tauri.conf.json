@@ -2,7 +2,7 @@
   "build": {
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
-    "beforeBundleCommand": "install_name_tool -change /nix/store/fsnxpfpl20ay54giw66q6aqgxyjm1r8g-gettext-0.21.1/lib/libintl.8.dylib @rpath/../Frameworks/libintl.8.dylib src-tauri/target/release/demo && install_name_tool -change /nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv.dylib @rpath/../Frameworks/libiconv.dylib src-tauri/target/release/demo &&install_name_tool -change /nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv-nocharset.dylib @rpath/../Frameworks/libiconv-nocharset.dylib src-tauri/target/release/demo &&install_name_tool -change /nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libcharset.1.dylib @rpath/../Frameworks/libcharset.1.dylib src-tauri/target/release/demo",
+    "beforeBundleCommand": "install_name_tool -change /nix/store/fsnxpfpl20ay54giw66q6aqgxyjm1r8g-gettext-0.21.1/lib/libintl.8.dylib @rpath/../Frameworks/libintl.8.dylib src-tauri/target/release/demo && install_name_tool -change /nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv.dylib @rpath/../Frameworks/libiconv.dylib src-tauri/target/release/demo &&install_name_tool -change /nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv-nocharset.dylib @rpath/../Frameworks/libiconv-nocharset.dylib @rpath/../Frameworks/libiconv.dylib &&install_name_tool -change /nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libcharset.1.dylib @rpath/../Frameworks/libcharset.1.dylib @rpath/../Frameworks/libiconv.dylib",
     "devPath": "http://localhost:1420",
     "distDir": "../dist"
   },
@@ -46,7 +46,6 @@
           "/nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv.dylib",
           "/nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv-nocharset.dylib",
           "/nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libcharset.1.dylib"
-
         ]
       }
     }
