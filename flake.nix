@@ -69,6 +69,9 @@
               rm -rf lib
               mkdir -p lib
 
+              echo $LIBRARY_PATH
+              echo $RUSTFLAGS
+
               cp ${pkgs.gettext}/lib/libintl.8.dylib lib/libintl.8.dylib
               chmod +w lib/libintl.8.dylib
               install_name_tool -id @executable_path/../Frameworks/libintl.8.dylib lib/libintl.8.dylib
@@ -101,6 +104,7 @@
           inputsFrom = [ rainix.devShells.${system}.tauri-shell ];
           shellHook = ''
             export LIBRARY_PATH="$LIBRARY_PATH:$PWD/lib"
+            export RUSTFLAGS="-L $PWD/lib"
           '';
         };
 
