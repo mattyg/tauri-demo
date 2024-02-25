@@ -67,7 +67,8 @@
               set -euxo pipefail
 
               ls src-tauri/target/release
-              otool -L src-tauri/target/release/demo | grep /nix/store
+              
+              if  ! otool -L src-tauri/target/release/demo | grep -q /nix/store ; then exit 1; fi
             '';
           };
 
