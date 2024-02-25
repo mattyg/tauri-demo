@@ -104,7 +104,7 @@
           inputsFrom = [ rainix.devShells.${system}.tauri-shell ];
           shellHook = ''
             export LIBRARY_PATH="$LIBRARY_PATH:$PWD/lib"
-            export RUSTFLAGS="-L $PWD/lib"
+            export RUSTFLAGS="-L$PWD/lib -l$PWD/lib/libintl.8.dylib"
           '';
         };
 
