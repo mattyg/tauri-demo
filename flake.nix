@@ -67,6 +67,7 @@
               set -euxo pipefail
 
               ls src-tauri/target/release
+              otool -L src-tauri/target/release/demo
             '';
           };
 
