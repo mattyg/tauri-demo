@@ -66,6 +66,8 @@
             body = ''
               set -euxo pipefail
 
+              echo $LIBRARY_PATH
+
               rm -rf lib
               mkdir -p lib
 
