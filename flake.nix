@@ -90,6 +90,7 @@
               cp ${pkgs.gettext}/lib/libintl.8.dylib lib/libintl.8.dylib
               chmod +w lib/libintl.8.dylib
               install_name_tool -id @executable_path/../Frameworks/libintl.8.dylib lib/libintl.8.dylib
+              otool -L lib/libintl.8.dylib
 
               cp ${pkgs.libiconv}/lib/libiconv.dylib lib/libiconv.dylib
               chmod +w lib/libiconv.dylib
