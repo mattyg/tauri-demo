@@ -77,6 +77,11 @@
               chmod +w lib/libiconv.dylib
               install_name_tool -id @executable_path/../Frameworks/libiconv.dylib lib/libiconv.dylib
               install_name_tool -change ${pkgs.libiconv}/lib/libiconv.dylib @executable_path/../Frameworks/libiconv.dylib lib/libintl.8.dylib
+
+              cp ${pkgs.libiconv}/lib/libiconv-nocharset.dylib lib/libiconv-nocharset.dylib
+              chmod +w lib/libiconv-nocharset.dylib
+              install_name_tool -id @executable_path/../Frameworks/libiconv-nocharset.dylib lib/libiconv-nocharset.dylib
+              install_name_tool -change ${pkgs.libiconv}/lib/libiconv-nocharset.dylib @executable_path/../Frameworks/libiconv-nocharset.dylib lib/libiconv.dylib
             '';
           };
         } // rainix.packages.${system};
