@@ -68,7 +68,8 @@
 
               ls src-tauri/target/release
 
-              if  ! $( otool -L src-tauri/target/release/demo | grep -q /nix/store ) ; then exit 1; fi;
+              otool -L src-tauri/target/release/demo | grep -q /nix/store
+              exit !$?
             '';
           };
 
