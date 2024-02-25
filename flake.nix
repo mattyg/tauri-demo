@@ -73,7 +73,10 @@
               chmod +w lib/libintl.8.dylib
               install_name_tool -id @executable_path/../Frameworks/libintl.8.dylib lib/libintl.8.dylib
 
-              ls ${pkgs.darwin.libiconv}/lib
+              cp ${pkgs.darwin.libiconv}/lib/libiconv.dylib lib/libiconv.dylib
+              chmod +w lib/libiconv.dylib
+              install_name_tool -id @executable_path/../Frameworks/libiconv.dylib lib/libiconv.dylib
+              install_name_tool -change ${pkgs.darwin.libiconv}/lib/libiconv.dylib @executable_path/../Frameworks/libiconv.dylib lib/libintl.8.dylib
             '';
           };
         } // rainix.packages.${system};
