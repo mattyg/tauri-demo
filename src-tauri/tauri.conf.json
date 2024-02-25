@@ -1,7 +1,7 @@
 {
   "build": {
     "beforeDevCommand": "npm run dev",
-    "beforeBuildCommand": "npm run build && cp /nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv-nocharset.dylib tmp-libs/libiconv-nocharset.dylib",
+    "beforeBuildCommand": "npm run build && mkdir tmp-libs && cp /nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv-nocharset.dylib ./tmp-libs/libiconv-nocharset.dylib",
     "beforeBundleCommand": "install_name_tool -change /nix/store/fsnxpfpl20ay54giw66q6aqgxyjm1r8g-gettext-0.21.1/lib/libintl.8.dylib @loader_path/../Frameworks/libintl.8.dylib src-tauri/target/release/demo && install_name_tool -change /nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv.dylib @loader_path/../Frameworks/libiconv.dylib src-tauri/target/release/demo",
     "devPath": "http://localhost:1420",
     "distDir": "../dist"
