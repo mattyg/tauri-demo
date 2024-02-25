@@ -69,7 +69,7 @@
               ls src-tauri/target/release
 
               install_name_tool -change ${pkgs.libiconv}/lib/libiconv.dylib @executable_path/../Frameworks/libiconv.dylib src-tauri/target/release/demo
-              install_name_tool -change ${pkgs.libiconv}/lib/libintl.8.dylib @executable_path/../Frameworks/libintl.8.dylib src-tauri/target/release/demo
+              install_name_tool -change ${pkgs.gettext}/lib/libintl.8.dylib @executable_path/../Frameworks/libintl.8.dylib src-tauri/target/release/demo
 
               otool -L src-tauri/target/release/demo
               otool -L src-tauri/target/release/demo | grep -q /nix/store
@@ -109,10 +109,6 @@
               install_name_tool -id @executable_path/../Frameworks/libintl.8.dylib lib/libintl.8.dylib
               install_name_tool -change ${pkgs.libiconv}/lib/libiconv.dylib @executable_path/../Frameworks/libiconv.dylib lib/libintl.8.dylib
               otool -L lib/libintl.8.dylib
-
-
-
-
             '';
           };
         } // rainix.packages.${system};
