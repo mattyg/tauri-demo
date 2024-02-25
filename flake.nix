@@ -2,7 +2,7 @@
   description = "Flake for development workflows.";
 
   inputs = {
-    rainix.url = "github:rainlanguage/rainix/6e97fc2a72bd7a3f9a9812f6b0a28346967e1037";
+    rainix.url = "github:rainlanguage/rainix/31fb1fa967bbfc484526101de9dc85e36a2530b9";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -104,7 +104,7 @@
           inputsFrom = [ rainix.devShells.${system}.tauri-shell ];
           shellHook = ''
             export LIBRARY_PATH="$LIBRARY_PATH:$PWD/lib"
-            export RUSTFLAGS="-L $PWD/lib"
+            export RUSTFLAGS="-L $PWD/lib"            
           '';
         };
 
