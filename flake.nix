@@ -71,6 +71,7 @@
               install_name_tool -change ${pkgs.libiconv}/lib/libiconv.dylib @executable_path/../Frameworks/libiconv.dylib src-tauri/target/release/demo
               install_name_tool -change ${pkgs.libiconv}/lib/libintl.8.dylib @executable_path/../Frameworks/libintl.8.dylib src-tauri/target/release/demo
 
+              otool -L src-tauri/target/release/demo
               otool -L src-tauri/target/release/demo | grep -q /nix/store
               if [ $? -eq 0 ]; then
                 exit 1
