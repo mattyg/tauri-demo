@@ -66,8 +66,6 @@
             body = ''
               set -euxo pipefail
 
-              echo $LIBRARY_PATH
-
               rm -rf lib
               mkdir -p lib
 
@@ -101,6 +99,9 @@
             packages.update-libs
           ];
           inputsFrom = [ rainix.devShells.${system}.tauri-shell ];
+          shellHook = ''
+            export LIBRARY_PATH="$LIBRARY_PATH:$PWD/lib"
+          '';
         };
 
       }
