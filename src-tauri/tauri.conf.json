@@ -2,6 +2,7 @@
   "build": {
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "nix develop .#tauri-shell --command update-libs",
+    "beforeBundleCommand": "nix develop .#tauri-shell --command update-bin",
     "devPath": "http://localhost:1420",
     "distDir": "../dist"
   },

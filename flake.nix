@@ -61,6 +61,15 @@
             '';
           };
 
+          update-bin = rainix.mkTask.${system} {
+            name = "update-bin";
+            body = ''
+              set -euxo pipefail
+
+              ls
+            '';
+          };
+
           update-libs = rainix.mkTask.${system} {
             name = "update-libs";
             body = ''
@@ -100,12 +109,9 @@
             packages.ob-tauri-prelude
             packages.ob-tauri-test
             packages.update-libs
+            packages.update-bin
           ];
           inputsFrom = [ rainix.devShells.${system}.tauri-shell ];
-          shellHook = ''
-            export LIBRARY_PATH="$LIBRARY_PATH:$PWD/lib"
-            export RUSTFLAGS="-L $PWD/lib"            
-          '';
         };
 
       }
