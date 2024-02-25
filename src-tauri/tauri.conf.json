@@ -42,10 +42,10 @@
       "macOS": {
         "minimumSystemVersion": "10.15",
         "frameworks": [
-          "/nix/store/fsnxpfpl20ay54giw66q6aqgxyjm1r8g-gettext-0.21.1/lib/libintl.8.dylib",
-          "tmp-lib/libiconv.dylib",
-          "/nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libcharset.1.dylib",
-          "/nix/store/zapcppsifq7v9153lapjjrygskji7wyw-libiconv-50/lib/libiconv-nocharset.dylib"
+          "lib/libintl.8.dylib",
+          "lib/libiconv.dylib",
+          "lib/libcharset.1.dylib",
+          "lib/libiconv-nocharset.dylib"
         ]
       }
     }
