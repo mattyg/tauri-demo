@@ -66,7 +66,7 @@
             body = ''
               set -euxo pipefail
 
-              ls
+              ls src-tauri/target/release
             '';
           };
 
