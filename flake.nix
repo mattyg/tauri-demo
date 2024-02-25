@@ -70,7 +70,7 @@
 
               cp ${pkgs.gettext}/lib/libintl.8.dylib lib/libintl.8.dylib
               chmod +w lib/libintl.8.dylib
-              install_name_tool -change ${pkgs.gettext}/lib/libintl.8.dylib @rpath/../Frameworks/libintl.8.dylib lib/libintl.8.dylib
+              install_name_tool -change ${pkgs.gettext}/lib/libintl.8.dylib @executable_path/../Frameworks/libintl.8.dylib lib/libintl.8.dylib
             '';
           };
         } // rainix.packages.${system};
