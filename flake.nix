@@ -78,9 +78,6 @@
               rm -rf lib
               mkdir -p lib
 
-              echo $LIBRARY_PATH
-              echo $RUSTFLAGS
-
               cp ${pkgs.gettext}/lib/libintl.8.dylib lib/libintl.8.dylib
               chmod +w lib/libintl.8.dylib
               install_name_tool -id @executable_path/../Frameworks/libintl.8.dylib lib/libintl.8.dylib
