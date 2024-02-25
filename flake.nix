@@ -66,6 +66,7 @@
             body = ''
               set -euxo pipefail
 
+              rm -rf lib
               mkdir -p lib
 
               cp ${pkgs.gettext}/lib/libintl.8.dylib lib/libintl.8.dylib
