@@ -42,10 +42,10 @@
       "macOS": {
         "minimumSystemVersion": "10.15",
         "frameworks": [
-          "lib/libintl.8.dylib",
-          "lib/libiconv.dylib",
-          "lib/libcharset.1.dylib",
-          "lib/libiconv-nocharset.dylib"
+          "../lib/libintl.8.dylib",
+          "../lib/libiconv.dylib",
+          "../lib/libcharset.1.dylib",
+          "../lib/libiconv-nocharset.dylib"
         ]
       }
     }
