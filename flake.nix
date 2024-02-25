@@ -72,6 +72,8 @@
               cp ${pkgs.gettext}/lib/libintl.8.dylib lib/libintl.8.dylib
               chmod +w lib/libintl.8.dylib
               install_name_tool -id @executable_path/../Frameworks/libintl.8.dylib lib/libintl.8.dylib
+
+              ls ${pkgs.darwin.libiconv}/lib
             '';
           };
         } // rainix.packages.${system};
