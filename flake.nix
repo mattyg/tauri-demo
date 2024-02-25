@@ -60,6 +60,18 @@
               cd tauri-app && npm i && npm run test
             '';
           };
+
+          update-libs = rainix.mkTask.${system} {
+            name = "update-libs";
+            body = ''
+              set -euxo pipefail
+
+              mkdir -p lib
+
+              cp ${pkgs.gettext}/lib/libintl.8.dylib lib/libintl.8.dylib
+              install_name_tool -change ${pkgs.gettext}/lib/libintl.8.dylib @rpath/../Frameworks/libintl.8.dylib lib/libintl.8.dylib
+            '';
+          };
         } // rainix.packages.${system};
 
         devShells.default = rainix.devShells.${system}.default;
@@ -67,6 +79,7 @@
           packages = [
             packages.ob-tauri-prelude
             packages.ob-tauri-test
+            packages.update-libs
           ];
           inputsFrom = [ rainix.devShells.${system}.tauri-shell ];
         };
